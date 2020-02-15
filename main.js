@@ -11,10 +11,10 @@ myFunc('myString');
 
 /*------------------------------ Solución ------------------------------------------- */
 
-function myString(strg){
-    console.log(strg.length);
+function FunString(mystring){
+    console.log(mystring.length);
   }
-  myString("I need to finish my homework");
+  FunString("I need to finish my homework");
 
 
 /*----------------------------------------------------------------------------------- */
@@ -37,14 +37,17 @@ b) el número ahora es un entero con valor de (valor) ;)
 
 /*------------------------------ Solución ------------------------------------------- */
 
-function entero(num){
-    if (Number.isInteger(num)){
-      console.log(num + "es entero");
-    }else{
-      console.log("el numero ahora es un entero con valor de " + Number.parseInt(num));
-    }
+function FunInteger(number) {
+  if(Number.isInteger(number)) {
+    console.log(number + " es un número entero");
   }
-  entero(3.4)
+  else {
+    console.log("El número ahora es un entero con valor de " + Number.parseInt(number));
+  }
+}
+
+FunInteger(7.3)
+
 
 /*----------------------------------------------------------------------------------- */
 
@@ -65,11 +68,11 @@ expected result:  4 caracteres.
 
 var value = false;
 
-function exercise3 (value) {
+function numCaracteres (value) {
     console.log(value.toString().length);
 }
 
-exercise3(value)
+numCaracteres(value)
 
 /*----------------------------------------------------------------------------------- */
 
@@ -93,6 +96,7 @@ let usuario = {
     matricula: "29344876",
     grupo: "207-A"
   }
+
   function myFunc(obj){
     console.log(Object.keys(usuario).length, Object.keys(usuario), Object.values(usuario));
   }
@@ -116,13 +120,13 @@ result: 3.
 
 /*------------------------------ Solución ------------------------------------------- */
 
-var valores = new Function ('a', 'b', 'c', 'return a+b+c');
+var value = new Function ('a', 'b', 'c', 'return a + b + c');
 
-function suma (valores) {
-    console.log(valores.length)
+function funSuma (value) {
+    console.log(value.length)
 }
 
-suma(valores)
+funSuma(value)
 
 /*----------------------------------------------------------------------------------- */
 
@@ -145,19 +149,22 @@ myFunc(arr, 3, 'apple');
 
 /*------------------------------ Solución ------------------------------------------- */
 
-// let frutas = ["apple", "banana"];
+// let array = ["apple", "banana"];
 // function myFunc(array,desiredLength,template){
 //   let diferencia = desiredLength - array.length;
 //   if(diferencia === 1){
 //     array.push(template);
 //     console.log(array);
-//   }else if(diferencia > 1){
-//     console.log(" el arreglo es menor por " + diferencia)
-//   }else{
-//     console.log("el arreglo es mayor por  " + Math.abs(diferencia));
+//   }
+//   else if(diferencia > 1){
+//     console.log("El arreglo es menor que desiredLength por " + diferencia)
+//   }
+//   else{
+//     console.log("El arreglo es mayor que desiredLength por  " + Math.abs(diferencia));
 //   }
 // }
-// myFunc(frutas,1,'apple');
+
+// myFunc(array,3,'grapes');
 
 /*----------------------------------------------------------------------------------- */
 
@@ -173,12 +180,13 @@ myFunc();
 
 /*------------------------------ Solución ------------------------------------------- */
 
-function date(){
-    var today = new Date();
-    console.log(today.toISOString());
+function fDate(){
+    var date = new Date();
+    console.log("La fecha actual es: " + date.toISOString());
     console.log(Date.now());
     }
-    date();
+
+   fDate();
 
 
 /*----------------------------------------------------------------------------------- */
@@ -199,11 +207,11 @@ result = 9;
 
 /*------------------------------ Solución ------------------------------------------- */
 
-// function myFunc(a, b) {
-//     var c = Math.abs(a);
-//     console.log(Math.pow(c, b));
-//   }
-//   myFunc(-3, 2);
+function Potencia(a, b) {
+    var c = Math.abs(a);
+    console.log(Math.pow(c, b));
+  }
+  Potencia(-3, 2);
 
 
 /*----------------------------------------------------------------------------------- */
@@ -225,15 +233,16 @@ myFunc(str, template)
 /*------------------------------ Solución ------------------------------------------- */
 
 var rg = new RegExp(/([A-Z])/);
-function regex(str, template) {
+
+function myFun(str, template) {
     if (rg.test(str)) {
-        newstring = str.replace(rg, template);
-        console.log(newstring);
+        console.log(str.replace(rg, template));
         return;
     }
-    console.log("No encuentro coincidencias");
+    console.log("No se encontraron coincidencias");
 }
-regex("nombre", "Ja");
+
+myFun("Nombre", "abc");
 
 /*----------------------------------------------------------------------------------- */
 
@@ -250,14 +259,14 @@ Ex: myFunc(number)
 
 /*------------------------------ Solución ------------------------------------------- */
 
-function myError(number){
+function isAerror(number){
     if (number <= 10){
-        console.log("valor dentro de los parametros ");
+        console.log("Valor dentro de los parametros ");
         return
     }
-    throw new Error("el valor esta fuera de los parametros");
+    throw new Error("El valor está fuera de los parametros");
 }
-myError(8);
+isAerror(10);
 
 /*----------------------------------------------------------------------------------- */
 
