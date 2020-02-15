@@ -11,10 +11,10 @@ myFunc('myString');
 
 /*------------------------------ Solución ------------------------------------------- */
 
-function FunString(mystring){
-    console.log(mystring.length);
-  }
-  FunString("I need to finish my homework");
+// function FunString(mystring){
+//     console.log(mystring.length);
+//   }
+//   FunString("I need to finish my homework");
 
 
 /*----------------------------------------------------------------------------------- */
@@ -37,16 +37,16 @@ b) el número ahora es un entero con valor de (valor) ;)
 
 /*------------------------------ Solución ------------------------------------------- */
 
-function FunInteger(number) {
-  if(Number.isInteger(number)) {
-    console.log(number + " es un número entero");
-  }
-  else {
-    console.log("El número ahora es un entero con valor de " + Number.parseInt(number));
-  }
-}
+// function FunInteger(number) {
+//   if(Number.isInteger(number)) {
+//     console.log(number + " es un número entero");
+//   }
+//   else {
+//     console.log("El número ahora es un entero con valor de " + Number.parseInt(number));
+//   }
+// }
 
-FunInteger(7.3)
+// FunInteger(7.3)
 
 
 /*----------------------------------------------------------------------------------- */
@@ -66,13 +66,13 @@ expected result:  4 caracteres.
 
 /*------------------------------ Solución ------------------------------------------- */
 
-var value = false;
+// var value = false;
 
-function numCaracteres (value) {
-    console.log(value.toString().length);
-}
+// function numCaracteres (value) {
+//     console.log(value.toString().length);
+// }
 
-numCaracteres(value)
+// numCaracteres(value)
 
 /*----------------------------------------------------------------------------------- */
 
@@ -91,16 +91,16 @@ myFunc(obj);
 
 /*------------------------------ Solución ------------------------------------------- */
 
-let usuario = {
-    name: "alumnoA",
-    matricula: "29344876",
-    grupo: "207-A"
-  }
+// let usuario = {
+//     name: "alumnoA",
+//     matricula: "29344876",
+//     grupo: "207-A"
+//   }
 
-  function myFunc(obj){
-    console.log(Object.keys(usuario).length, Object.keys(usuario), Object.values(usuario));
-  }
-  myFunc(usuario);
+//   function myFunc(obj){
+//     console.log(Object.keys(usuario).length, Object.keys(usuario), Object.values(usuario));
+//   }
+//   myFunc(usuario);
 
 /*----------------------------------------------------------------------------------- */
 
@@ -120,13 +120,13 @@ result: 3.
 
 /*------------------------------ Solución ------------------------------------------- */
 
-var value = new Function ('a', 'b', 'c', 'return a + b + c');
+// var value = new Function ('a', 'b', 'c', 'return a + b + c');
 
-function funSuma (value) {
-    console.log(value.length)
-}
+// function funSuma (value) {
+//     console.log(value.length)
+// }
 
-funSuma(value)
+// funSuma(value)
 
 /*----------------------------------------------------------------------------------- */
 
@@ -180,13 +180,13 @@ myFunc();
 
 /*------------------------------ Solución ------------------------------------------- */
 
-function fDate(){
-    var date = new Date();
-    console.log("La fecha actual es: " + date.toISOString());
-    console.log(Date.now());
-    }
+// function fDate(){
+//     var date = new Date();
+//     console.log("La fecha actual es: " + date.toISOString());
+//     console.log(Date.now());
+//     }
 
-   fDate();
+//    fDate();
 
 
 /*----------------------------------------------------------------------------------- */
@@ -207,11 +207,11 @@ result = 9;
 
 /*------------------------------ Solución ------------------------------------------- */
 
-function Potencia(a, b) {
-    var c = Math.abs(a);
-    console.log(Math.pow(c, b));
-  }
-  Potencia(-3, 2);
+// function Potencia(a, b) {
+//     var c = Math.abs(a);
+//     console.log(Math.pow(c, b));
+//   }
+//   Potencia(-3, 2);
 
 
 /*----------------------------------------------------------------------------------- */
@@ -232,17 +232,17 @@ myFunc(str, template)
 
 /*------------------------------ Solución ------------------------------------------- */
 
-var rg = new RegExp(/([A-Z])/);
+// var rg = new RegExp(/([A-Z])/);
 
-function myFun(str, template) {
-    if (rg.test(str)) {
-        console.log(str.replace(rg, template));
-        return;
-    }
-    console.log("No se encontraron coincidencias");
-}
+// function myFun(str, template) {
+//     if (rg.test(str)) {
+//         console.log(str.replace(rg, template));
+//         return;
+//     }
+//     console.log("No se encontraron coincidencias");
+// }
 
-myFun("Nombre", "abc");
+// myFun("Nombre", "abc");
 
 /*----------------------------------------------------------------------------------- */
 
@@ -259,14 +259,14 @@ Ex: myFunc(number)
 
 /*------------------------------ Solución ------------------------------------------- */
 
-function isAerror(number){
-    if (number <= 10){
-        console.log("Valor dentro de los parametros ");
-        return
-    }
-    throw new Error("El valor está fuera de los parametros");
-}
-isAerror(10);
+// function isAerror(number){
+//     if (number <= 10){
+//         console.log("Valor dentro de los parametros ");
+//         return
+//     }
+//     throw new Error("El valor está fuera de los parametros");
+// }
+// isAerror(10);
 
 /*----------------------------------------------------------------------------------- */
 
@@ -278,7 +278,51 @@ entre los proyectos finales que tienen asignados.
 
 Describir el caso:
 
+//Proyecto: PetMatcher
+//La función realizada está basada en 2 objetos (perrito y persona) con los cuales a través de propiedades
+ definididas se comparan sus valores, a partir de un número de coincidencias (en este 
+ejemplo: 2), se establecerá si hay match entre la persona y el perrito:
+1. Si el resultado de coincidencias es mayor o igual a 2 se usará un console.log con la leyenda
+"Tu nuevo mejor amigo es X".
+2. En caso contrario, se usará una leyenda con "Por el momento no tenemos el amigo perfecto para tí."
+
 Mostrar la solucíon en código:
-
-
 */
+
+let perrito = {
+  name: "Fido",
+  size: "small",
+  color: "black",
+  goodwith: "kids"
+};
+
+let persona = {
+  name: "Nalle",
+  sizePrefered: "small",
+  colorPrefered: "white",
+  goodwithPrefered: "kids"
+};
+
+let perritoValue =Object.values(perrito);
+let personaValue = Object.values(persona);
+let coincidencias = 0;
+
+function match(obj){
+      for(let i = 0; i < perritoValue.length; i++) {
+         if(perritoValue[i] === personaValue[i]) {
+          console.log(personaValue[i]);
+          console.log(personaValue[i]);
+           coincidencias += 1;
+           console.log(coincidencias);
+         }
+      }
+
+      if (coincidencias >= 2) {
+        console.log("Tu nuevo mejor amigo es " + perritoValue[0]);
+      }
+      else {
+        console.log("Por el momento no tenemos el amigo perfecto para tí")
+      }
+}
+
+match();
