@@ -46,7 +46,7 @@ function FunInteger(number) {
   }
 }
 
-FunInteger(7.3)
+FunInteger(7.3);
 
 
 /*----------------------------------------------------------------------------------- */
@@ -66,13 +66,12 @@ expected result:  4 caracteres.
 
 /*------------------------------ Solución ------------------------------------------- */
 
-var value = false;
 
 function numCaracteres (value) {
     console.log(value.toString().length);
 }
 
-numCaracteres(value)
+numCaracteres(false);
 
 /*----------------------------------------------------------------------------------- */
 
@@ -95,7 +94,7 @@ let usuario = {
     name: "alumnoA",
     matricula: "29344876",
     grupo: "207-A"
-  }
+  };
 
   function myFunc(obj){
     console.log(Object.keys(usuario).length, Object.keys(usuario), Object.values(usuario));
@@ -123,10 +122,10 @@ result: 3.
 var value = new Function ('a', 'b', 'c', 'return a + b + c');
 
 function funSuma (value) {
-    console.log(value.length)
+    console.log(value.length);
 }
 
-funSuma(value)
+funSuma(value);
 
 /*----------------------------------------------------------------------------------- */
 
@@ -208,8 +207,7 @@ result = 9;
 /*------------------------------ Solución ------------------------------------------- */
 
 function Potencia(a, b) {
-    var c = Math.abs(a);
-    console.log(Math.pow(c, b));
+    console.log(Math.pow(Math.abs(a),b));
   }
   Potencia(-3, 2);
 
@@ -279,50 +277,51 @@ entre los proyectos finales que tienen asignados.
 Describir el caso:
 
 //Proyecto: PetMatcher
-//La función realizada está basada en 2 objetos (perrito y persona) con los cuales a través de propiedades
- definididas se comparan sus valores, a partir de un número de coincidencias (en este 
-ejemplo: 2), se establecerá si hay match entre la persona y el perrito:
-1. Si el resultado de coincidencias es mayor o igual a 2 se usará un console.log con la leyenda
-"Tu nuevo mejor amigo es X".
-2. En caso contrario, se usará una leyenda con "Por el momento no tenemos el amigo perfecto para tí."
+//Se presentan dos funciones cuyos parámetros son dos arreglos pet y preferences(derivado de las preferencias
+  del usuario por los perros). 
+  
+ 1. Función getUpperCase: Dado que el usuario puede ingresar su información con letras mayúsculas o 
+  minúsculas, esta función convierte todos los elementos a letra mayúsculas.
+ 2. Función match: recibe los parámetros pet y preferences. Tiene la finalidad de buscar elementos
+  idénticos entre los array (a través de includes()), por cada coincidencia entre ambos habrá un contador
+  que registre este número, para ejemplificarlo se definió que a partir de 3 coincidencias existe un match.
+         *Si el resultado de coincidencias es mayor o igual a 3 se usará un console.log con la leyenda
+           "Tu nuevo mejor amigo es X".
+         *En caso contrario, se usará una leyenda con "Por el momento no tenemos el amigo perfecto para tí."
 
 Mostrar la solucíon en código:
 */
 
-let perrito = {
-  name: "Fido",
-  size: "small",
-  color: "black",
-  goodwith: "kids"
-};
+const pet = ["Fido", "small", "black", "Kids", "old"];
+const preferences = ["Nalle", "Small", "white", "kids", "old"];
+var contador = 0;
 
-let persona = {
-  name: "Nalle",
-  sizePrefered: "small",
-  colorPrefered: "white",
-  goodwithPrefered: "kids"
-};
+//Cambiar los elementos del arreglo a mayúsculas
+function getUpperCase (pet,preferences) {
+  for(var i= 0; i <pet.length; i++){
+    pet[i] = pet[i].toUpperCase();
+    preferences[i] = preferences[i].toUpperCase();
+  }
+  console.log(pet, preferences);  
+}
+getUpperCase(pet, preferences);
 
-let perritoValue =Object.values(perrito);
-let personaValue = Object.values(persona);
-let coincidencias = 0;
-
-function match(obj){
-      for(let i = 0; i < perritoValue.length; i++) {
-         if(perritoValue[i] === personaValue[i]) {
-          console.log(personaValue[i]);
-          console.log(personaValue[i]);
-           coincidencias += 1;
-           console.log(coincidencias);
-         }
-      }
-
-      if (coincidencias >= 2) {
-        console.log("Tu nuevo mejor amigo es " + perritoValue[0]);
+//Hacer el match con los elementos en mayúscula
+function match (pet, preferences){
+     for(let i=0; i < preferences.length; i++) {
+        let result = pet.includes(preferences[i]);
+            if(result === true) {
+                contador += 1;
+            }
+     }
+    if (contador >=3) {
+      console.log("Tu nuevo mejor amigo es " + pet[0]);  
       }
       else {
-        console.log("Por el momento no tenemos el amigo perfecto para tí")
+      console.log("Por el momento no tenemos el amigo perfecto para tí")  
       }
 }
 
-match();
+match(pet, preferences);
+
+
