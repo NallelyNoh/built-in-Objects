@@ -148,22 +148,22 @@ myFunc(arr, 3, 'apple');
 
 /*------------------------------ Solución ------------------------------------------- */
 
-// let array = ["apple", "banana"];
-// function myFunc(array,desiredLength,template){
-//   let diferencia = desiredLength - array.length;
-//   if(diferencia === 1){
-//     array.push(template);
-//     console.log(array);
-//   }
-//   else if(diferencia > 1){
-//     console.log("El arreglo es menor que desiredLength por " + diferencia)
-//   }
-//   else{
-//     console.log("El arreglo es mayor que desiredLength por  " + Math.abs(diferencia));
-//   }
-// }
+let array = ["apple", "banana"];
+function myFunc(array,desiredLength,template){
+  let diferencia = desiredLength - array.length;
+  if(diferencia === 1){
+    array.push(template);
+    console.log(array);
+  }
+  else if(diferencia > 1){
+    console.log("El arreglo es menor que desiredLength por " + diferencia)
+  }
+  else{
+    console.log("El arreglo es mayor que desiredLength por  " + Math.abs(diferencia));
+  }
+}
 
-// myFunc(array,3,'grapes');
+myFunc(array,3,'grapes');
 
 /*----------------------------------------------------------------------------------- */
 
