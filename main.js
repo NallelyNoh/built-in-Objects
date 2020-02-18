@@ -151,7 +151,7 @@ myFunc(arr, 3, 'apple');
 let array = ["apple", "banana"];
 function myFunc(array,desiredLength,template){
   let diferencia = desiredLength - array.length;
-  if(diferencia === 1){
+  if(diferencia === 1){s
     array.push(template);
     console.log(array);
   }
